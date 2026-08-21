@@ -1,0 +1,14 @@
+###--
+'''
+Nombre: Evaluación Analizadores de Lenguajes
+Descripción: Examen donde deben cumplir con el procesamiento de gramaticas y patrones.
+Notas: NA.
+Elementos Clave: Prolog, Regex, List, Lexer.
+SEAES_CACEI: CD1-2,CD2-2,AE1,AE2, Compromiso con responsabilidad Social.
+'''
+##R001##
+##100##
+"""
+Descripción: Serie de reactivos  con ponderación
+Restricciones: NA.
+"""

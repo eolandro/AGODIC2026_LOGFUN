@@ -1,0 +1,25 @@
+- Actividad: "Nombre: Ejercicios Recursividad\nDescripción: Serie de ejercicios de
+    Recursividad.\nNotas: NA.\nElementos Clave: Recursividad.\nSEAES_CACEI: CD1-2,CD2-2,AE1,AE2,
+    Compromiso con responsabilidad Social."
+  Reactivos:
+  - ID: R001
+    Ponderacion: 34
+    Reactivo: "Descripción: Serie de varios ejercicios con ponderación\nRestricciones:
+      NA."
+- Actividad: "Nombre: Ejercicios Tipos de Funciones\nDescripción: Serie de ejercicios
+    de Tipos de Funciones.\nNotas: NA.\nElementos Clave: Funciones de Orden Superior,
+    Wrappers, Closure, Currying.\nSEAES_CACEI: NA"
+  Reactivos:
+  - ID: R002
+    Ponderacion: 34
+    Reactivo: "Descripción: Serie de varios ejercicios con ponderación\nRestricciones:
+      NA."
+- Actividad: "Nombre: Ejercicios Evaluación Perezosa\nDescripción: Serie de ejercicios
+    de Evaluacion perezosa y procesamiento de datos.\nNotas: NA.\nElementos Clave:
+    Mondad, Generator, Comprehesions.\nSEAES_CACEI: CD1-2,CD2-2,AE1,AE2, Compromiso
+    con responsabilidad Social."
+  Reactivos:
+  - ID: R003
+    Ponderacion: 32
+    Reactivo: "Descripción: Serie de varios ejercicios con ponderación\nRestricciones:
+      NA."

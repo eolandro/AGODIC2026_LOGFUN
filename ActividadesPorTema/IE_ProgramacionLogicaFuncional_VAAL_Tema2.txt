@@ -1,0 +1,42 @@
+###--
+'''
+Nombre: Ejercicios Recursividad
+Descripción: Serie de ejercicios de Recursividad.
+Notas: NA.
+Elementos Clave: Recursividad.
+SEAES_CACEI: CD1-2,CD2-2,AE1,AE2, Compromiso con responsabilidad Social.
+'''
+##R001##
+##34##
+"""
+Descripción: Serie de varios ejercicios con ponderación
+Restricciones: NA.
+"""
+###--
+'''
+Nombre: Ejercicios Tipos de Funciones
+Descripción: Serie de ejercicios de Tipos de Funciones.
+Notas: NA.
+Elementos Clave: Funciones de Orden Superior, Wrappers, Closure, Currying.
+SEAES_CACEI: NA
+'''
+##R002##
+##34##
+"""
+Descripción: Serie de varios ejercicios con ponderación
+Restricciones: NA.
+"""
+###--
+'''
+Nombre: Ejercicios Evaluación Perezosa
+Descripción: Serie de ejercicios de Evaluacion perezosa y procesamiento de datos.
+Notas: NA.
+Elementos Clave: Mondad, Generator, Comprehesions.
+SEAES_CACEI: CD1-2,CD2-2,AE1,AE2, Compromiso con responsabilidad Social.
+'''
+##R003##
+##32##
+"""
+Descripción: Serie de varios ejercicios con ponderación
+Restricciones: NA.
+"""

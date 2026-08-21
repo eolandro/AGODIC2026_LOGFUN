@@ -1,0 +1,14 @@
+###--
+'''
+Nombre: Evaluación Bases de conocimiento
+Descripción: Examen donde deben cumplir con la relaciones de los hecho y reglas en la base de conocimiento.
+Notas: NA.
+Elementos Clave: Prolog, Arboles, Hechos, Reglas.
+SEAES_CACEI: CD1-2,CD2-2,AE1,AE2, Compromiso con responsabilidad Social.
+'''
+##R001##
+##100##
+"""
+Descripción: Serie de reactivos  con ponderación
+Restricciones: NA.
+"""

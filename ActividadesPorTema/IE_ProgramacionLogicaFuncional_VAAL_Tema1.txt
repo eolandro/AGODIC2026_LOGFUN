@@ -1,0 +1,14 @@
+###--
+'''
+Nombre: Evaluación Escrita
+Descripción: Breve examen sobre los conceptos fundamentales de los paradigmas de programación.
+Notas: NA.
+Elementos Clave: Programacion Declarativa, Programación Imperativa, Godel, Turing, Church, Post, Lisp, Fortran,IPL.
+SEAES_CACEI: CD1-3,CD2-3,AE1,AE2, Compromiso con responsabilidad Social.NA
+'''
+##R001##
+##100##
+"""
+Descripción: Serie de 4 o 5 preguntas con ponderación
+Restricciones: NA.
+"""
