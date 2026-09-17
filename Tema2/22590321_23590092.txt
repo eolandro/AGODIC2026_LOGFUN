@@ -1,0 +1,555 @@
+##R001##
+##20##
+"""
+Escriba la funcion respectiva en python
+para la siguiente funcion matematica
+f(0) = 1
+f(n) = f(n-1)**n  - 2*f(n-1)
+
+Demostracion
+f(0) = 1
+f(1) = -1
+f(2) = 3
+f(3) = 21
+
+defina una funcion en python
+
+def fun(N):
+	pass
+	
+print(fun(0))
+#1
+print(fun(1))
+#-1
+print(fun(2))
+#3
+print(fun(3))
+#21
+"""
+# Definimos la función llamada fun y recibe un número N
+def fun(N):
+    # Si N es igual a 0, llegamos al caso base
+    if N == 0:
+        # La función indica que f(0) = 1
+        return 1
+    # Si N no es 0, hacemos la llamada recursiva
+    else:
+        # Calculamos el valor anterior, es decir, f(N-1)
+        anterior = fun(N - 1)
+        # Aplicamos la fórmula: f(N) = f(N-1)^N - 2*f(N-1)
+        return anterior ** N - 2 * anterior
+
+
+# Llamamos a la función con 0 y mostramos el resultado
+print(fun(0))
+# Llamamos a la función con 1 y mostramos el resultado
+print(fun(1))
+# Llamamos a la función con 2 y mostramos el resultado
+print(fun(2))
+# Llamamos a la función con 3 y mostramos el resultado
+print(fun(3))
+
+##R002##
+##25##
+"""
+Dada la siguiente secuencia matematica
+7, 17, 37, 77, 157, 317
+Encuentre la función matematica recursiva
+e implementela en python
+
+def seq0():
+	pass
+	
+print(seq0(0))
+#7
+print(seq0(1))
+#17
+print(seq0(2))
+#37
+
+"""
+# Definimos la función seq0 y recibe un número N
+def seq0(N):
+    # Si N es 0, este es nuestro caso base
+    if N == 0:
+        # El primer número de la secuencia es 7
+        return 7
+    # Si N no es 0, continuamos con la recursividad
+    else:
+        # Aplicamos la fórmula: f(N) = 2*f(N-1) + 3
+        return 2 * seq0(N - 1) + 3
+
+# Calculamos el primer elemento de la secuencia
+print(seq0(0))
+# Calculamos el segundo elemento de la secuencia
+print(seq0(1))
+# Calculamos el tercer elemento de la secuencia
+print(seq0(2))
+
+##R003##
+##45##
+"""
+Recorrido en un grafo circular
+Defina una funcion recursiva que imprima todos
+los elementos de un grafo circular en orden inverso
+
+AZQ → BXQ → CYQ → DWQ → EVQ
+ ↑                       ↓
+JUQ ← GRX ← HSX ← ITQ ← FUQ
+
+
+Grafo = [
+	["AZQ","BXQ"],
+	["BXQ","CYQ"],
+	["CYQ","DWQ"],
+	["DWQ","EVQ"],
+	["EVQ","FUQ"],
+	["FUQ","GRX"],
+	["GRX","HSX"],
+	["HSX","ITQ"],
+	["ITQ","JUQ"],
+	["JUQ","AZQ"]
+]
+
+def impGrafCirR(grafo,inicio,limite):
+	pass
+
+impGradCirR(Grafo,"AZQ","EVQ")
+#EVQ
+#DWQ
+#CYQ
+#BXQ
+#AZQ
+
+impGradCirR(Grafo,"AZQ","GRX")
+
+#GRX
+#FUQ
+#EVQ
+#DWQ
+#CYQ
+#BXQ
+#AZQ
+"""
+
+# Creamos el grafo con sus conexiones
+Grafo = [
+    ["AZQ","BXQ"],
+    ["BXQ","CYQ"],
+    ["CYQ","DWQ"],
+    ["DWQ","EVQ"],
+    ["EVQ","FUQ"],
+    ["FUQ","GRX"],
+    ["GRX","HSX"],
+    ["HSX","ITQ"],
+    ["ITQ","JUQ"],
+    ["JUQ","AZQ"]
+]
+
+# Esta función busca qué elemento está antes del elemento actual
+def buscaAnterior(grafo, inicio, posicion):
+    # Revisamos si el segundo elemento de la posición actual
+    # es igual al elemento que estamos buscando
+    if grafo[posicion][1] == inicio:
+        # Si coincide, regresamos el elemento que estaba antes
+        return grafo[posicion][0]
+    # Si todavía no encontramos el elemento
+    else:
+        # Avanzamos a la siguiente posición del grafo
+        # y volvemos a llamar a la función
+        return buscaAnterior(grafo, inicio, posicion + 1)
+
+# Esta función imprime el recorrido del grafo en orden inverso
+def impGrafCirR(grafo, inicio, limite):
+    # Si llegamos al elemento límite, imprimimos ese elemento
+    if inicio == limite:
+        # Mostramos el elemento límite
+        print(inicio)
+    # Si todavía no llegamos al límite
+    else:
+        # Buscamos cuál es el elemento anterior al actual
+        siguiente = buscaAnterior(grafo, inicio, 0)
+        # Llamamos nuevamente a la función para seguir recorriendo
+        # el grafo hasta llegar al límite
+        impGrafCirR(grafo, siguiente, limite)
+        # Cuando la recursividad regresa, imprimimos el elemento actual
+        print(inicio)
+
+# Iniciamos el recorrido desde AZQ hasta llegar a EVQ
+impGrafCirR(Grafo, "AZQ", "EVQ")
+# Dejamos una línea en blanco para separar los resultados
+print()
+# Iniciamos otro recorrido desde AZQ hasta llegar a GRX
+impGrafCirR(Grafo, "AZQ", "GRX")
+
+##R004##
+##10##
+"""
+Bada Boom!!! Parte 1
+define una funcion en python que dado un numero entero te devuelva un 
+resultado segun las siguientes condiciones:
+	1) Si es multiplo de 3 coloque la cadena "Bada"
+	2) Si es multiplo de 5 coloque la cadena "Boom!!"
+	3) Si es multiplo de 3 y 5 coloque "Bada Boom!!"
+	4) El mismo numero si no cae en los casos anteriores
+	
+def badaboom(Num):
+	pass
+	
+print(badaboom(1))
+# 1
+print(badaboom(3))
+# Bada
+print(badaboom(5))
+# Boom!!
+print(badaboom(15))
+# BadaBoom!!
+
+"""
+# Definimos la función badaboom y recibe un número
+def badaboom(Num):
+    # Comprobamos primero si el número es múltiplo de 3 y de 5
+    if Num % 3 == 0 and Num % 5 == 0:
+        # Si cumple ambas condiciones, regresamos "BadaBoom!!"
+        return "BadaBoom!!"
+    # Si no fue múltiplo de ambos, comprobamos si es múltiplo de 3
+    elif Num % 3 == 0:
+        # Si es múltiplo de 3, regresamos "Bada"
+        return "Bada"
+    # Si no fue múltiplo de 3, comprobamos si es múltiplo de 5
+    elif Num % 5 == 0:
+        # Si es múltiplo de 5, regresamos "Boom!!"
+        return "Boom!!"
+    # Si no cumple ninguna de las condiciones anteriores
+    else:
+        # Regresamos el mismo número
+        return Num
+
+# Probamos la función con el número 1
+print(badaboom(1))
+# Probamos la función con el número 3
+print(badaboom(3))
+# Probamos la función con el número 5
+print(badaboom(5))
+# Probamos la función con el número 15
+print(badaboom(15))
+
+
+##R005##
+##10##
+"""
+Bada Boom!!! Parte 2
+
+Define una funcion que retorne una lista con los numeros del 1 al 100
+aplicando la funcion Badaboom
+	
+def lista_badaboom():
+	pass
+	
+L = lista_badaboom()
+print(L)
+#[1,2,"Bada",4,"Boom!!","Bada",7,8,"Bada","Boom!!",11,"Bada",13,14,"BadaBoom!!"...
+"""
+# Definimos la función badaboom para determinar qué debe devolver
+# cada número
+def badaboom(Num):
+    # Comprobamos si el número es múltiplo de 3 y de 5
+    if Num % 3 == 0 and Num % 5 == 0:
+        # Si cumple ambas condiciones, regresamos "BadaBoom!!"
+        return "BadaBoom!!"
+    # Comprobamos si el número es múltiplo de 3
+    elif Num % 3 == 0:
+        # Si es múltiplo de 3, regresamos "Bada"
+        return "Bada"
+    # Comprobamos si el número es múltiplo de 5
+    elif Num % 5 == 0:
+        # Si es múltiplo de 5, regresamos "Boom!!"
+        return "Boom!!"
+    # Si no es múltiplo de 3 ni de 5
+    else:
+        # Regresamos el mismo número
+        return Num
+
+# Definimos la función que creará la lista del 1 al 100
+# El valor inicial de Num será 1
+def lista_badaboom(Num=1):
+    # Si Num es mayor que 100, llegamos al caso base
+    if Num > 100:
+        # Regresamos una lista vacía porque ya terminamos
+        return []
+    # Si todavía no llegamos al 100
+    else:
+        # Agregamos el resultado de badaboom para el número actual
+        # y llamamos nuevamente a la función con el siguiente número
+        return [badaboom(Num)] + lista_badaboom(Num + 1)
+
+# Llamamos a la función para crear la lista
+L = lista_badaboom()
+# Mostramos la lista completa
+print(L)
+
+##R006##
+##25##
+"""
+	Un analizador logico es una herramienta para ver señales electricas en un circuito o computadora
+	
+	Una persona se le ha dañado su laptop y no tiene acceso completo
+	al sistema operativo (Pantalla de la muerte) por lo que se dispone
+	a extraer el disco duro, sin embargo al conectarlo en una PC
+	este esta cifrado con Bitlocker y requiere una contraseña
+	
+	Usando el anterior mencionado analizador logico es posible ver la
+	contraseña en el momento de arranque laptop. 
+	Pero el analizador logico no manda la contraseña en texto convencional
+	lo manda un byte en dos listas de numeros hexadecimales de 8 
+	posiciones de siguiente manera:
+	
+	Supongamos que se envia la contraseña '12344321' en hexamedecimal
+	equivale a 0x31,0x32,0x33,0x34,0x34,0x33,0x32,0x31  y las listas 
+	serian las siguientes:
+	#   |1|2|3|4|4|3|2|1
+	A = [3,3,3,3,3,3,3,3]
+	B = [1,2,3,4,4,3,2,1]
+	
+	defina la funcion decodifica que nos mande la contraseña 
+	original apoyate de la funcion <chr> de python que convierte un numero
+	en una cadena segun su ascii
+	
+	print(chr(49))
+	
+	ejemplo:
+	
+	A = [3,3,3,3,3,3,3,3]
+	B = [1,2,3,4,4,3,2,1]
+	
+	def decodifica(LA,LB):
+		pass
+	
+	PASS = decodifica(LA,LB)
+	print(PASS)
+	# 12344321
+"""
+def decodifica(LA, LB):
+    if not LA or not LB:
+        return ""
+    match (LA, LB):
+        case ([PA, *FA], [PB, *FB]):
+            return chr(PA * 16 + PB) + decodifica(FA, FB)
+        case _:
+            return ""
+
+LA = [3, 3, 3, 3, 3, 3, 3, 3]
+LB = [1, 2, 3, 4, 4, 3, 2, 1]
+PASS = decodifica(LA, LB)
+print(PASS)
+
+##R007##
+##20##
+"""
+Una funcion toma dos listas L1 y L2, las une en una sola
+combiando primer elemento de L1 con el primer elemento de L2.
+
+Si una de las dos listas se agota simplemente une el resto de la lista a
+la lista resultante
+
+def combinaListas(L1,L2):
+	pass
+
+R = combinaListas([1,2,3],["a","b","c"])
+print(R)
+# [1,"a",2,"b",3,"c"]
+
+R = combinaListas([1],["a","b","c"])
+print(R)
+# [1,"a","b","c"]
+
+R = combinaListas([1,2,3],["a"])
+print(R)
+# [1,"a",2,3]
+
+R = combinaListas([1,2,3],[])
+print(R)
+# [1,2,3]
+
+R = combinaListas([],["a","b","c"])
+print(R)
+# ["a","b","c"]
+"""
+def combinaListas(L1, L2):
+    if not L1:
+        return L2
+    if not L2:
+        return L1
+    match (L1, L2):
+        case ([P1, *F1], [P2, *F2]):
+            return [P1, P2] + combinaListas(F1, F2) 
+        case _:
+            return []
+
+R = combinaListas([1,2,3],["a","b","c"])
+print(R)
+# [1,"a",2,"b",3,"c"]
+R = combinaListas([1],["a","b","c"])
+print(R)
+# [1,"a","b","c"]
+R = combinaListas([1,2,3],["a"])
+print(R)
+# [1,"a",2,3]
+R = combinaListas([1,2,3],[])
+print(R)
+# [1,2,3]
+R = combinaListas([],["a","b","c"])
+print(R)
+# ["a","b","c"]
+
+##R008##
+##35##
+"""
+Procesar data
+
+Utilizando el patron de diseño composicion recursiva obten la
+salida correspondiente:
+
+R = "29590095,ROMAY TACITURNO RENE FERNANDA,0,1,1,1,1,1,1,0"
+
+T = composicion_recursiva(R,[fun1,fun2,fun3,funN..])
+print(T)
+# [29590095,"ROMAY TACITURNO RENE FERNANDA",2,6]
+
+"""
+def composicion_recursiva(Valor, ListaFunciones):
+    if not ListaFunciones:
+        return Valor
+    match ListaFunciones:
+        case [PF]:
+            return PF(Valor)
+        case [PF, *FF]:
+            return composicion_recursiva(PF(Valor), FF)
+        case _:
+            return Valor
+
+def fun1(R):
+    return R.split(",")
+
+def fun2(L):
+    match L:
+        case [P, *F]:
+            return [int(P)] + F
+        case _:
+            return []
+
+def contar(L, Valor):
+    if not L:
+        return 0
+
+    match L:
+        case [P, *F]:
+            if int(P) == Valor:
+                return 1 + contar(F, Valor)
+
+            return contar(F, Valor)
+
+        case _:
+            return 0
+
+def fun3(L):
+    match L:
+        case [ID, Nombre, *F]:
+            return [
+                ID,
+                Nombre,
+                contar(F, 0),
+                contar(F, 1)
+            ]
+
+        case _:
+            return []
+
+R = "29590095,ROMAY TACITURNO RENE FERNANDA,0,1,1,1,1,1,1,0"
+T = composicion_recursiva(R, [fun1, fun2, fun3])
+print(T)
+
+##R009##
+##20##
+"""
+Escriba la funcion respectiva en python
+para la siguiente funcion matematica
+f(0) = 3
+f(n) = f(n-1)**3  - 3*f(n-1)
+
+Demostracion
+f(0) = 3
+f(1) = 18
+f(2) = 5778
+f(3) = 192900153618
+
+defina una funcion en python
+
+def funZ(N):
+	pass
+	
+print(fun(0))
+# 3
+print(fun(1))
+# 18
+print(fun(2))
+# 5778
+print(fun(3))
+# 192900153618
+"""
+def funZ(N):
+    match N:
+        case int():
+            if N < 0:
+                return None
+            if N == 0:
+                return 3
+            else:
+                return funZ(N - 1) ** 3 - 3 * funZ(N - 1)
+        case _:
+            return None
+
+print(funZ(0))
+print(funZ(1))
+print(funZ(2))
+print(funZ(3))
+
+##R010##
+##10##
+"""
+Defina una función recursiva que permita imprimir
+una matriz, una matriz en realidad es una lista
+de listas
+
+M = [
+	[9,8,7],
+	[4,5,6],
+	[3,2,1]
+]
+
+def impMat(matriz):
+	pass
+	
+impMat(M)
+#[9,8,7],
+#[4,5,6],
+#[3,2,1]
+"""
+
+def impMat(matriz):
+    match matriz:
+        case []:
+            return
+        case [Fila, *Resto]:
+            print(Fila)
+            impMat(Resto)
+        case _:
+            return
+
+M = [
+    [9, 8, 7],
+    [4, 5, 6],
+    [3, 2, 1],
+]
+ 
+impMat(M)
