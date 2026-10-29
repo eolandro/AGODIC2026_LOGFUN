@@ -1,6 +1,7 @@
-#INFORMACION DEL EQUIPO 
--NoControl: "22590316"
-Nombre: ANDREA ANGELES DIONICIO
-
--NoControl: "22590357"
-Nombre: MARIO ALBERTO SANCHEZ ROJAS
+#Informacion del Equipo
+---
+Equipo:
+  - NoControl: "22590316"
+    Nombre: ANDREA ANGELES DIONICIO
+  - NoControl: "22590357"
+    Nombre: MARIO ALBERTO SANCHEZ ROJAS
